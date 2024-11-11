@@ -3,13 +3,13 @@
 
 int main() {
     SLL list;
-    MAKENULL(&list);  // Initialize the list to be empty
+    INIT(&list);  // Initialize the list
 
     // Test INSERT at the beginning (NULL means inserting at head)
     printf("Inserting elements at the head:\n");
-    INSERT(&list, 10, NULL);  // Insert 10 at the beginning
-    INSERT(&list, 20, NULL);  // Insert 20 at the beginning
-    INSERT(&list, 30, NULL);  // Insert 30 at the beginning
+    INSERT(&list, 10, NULL); // Insert 10 at the beginning
+    INSERT(&list, 20, NULL); // Insert 20 at the beginning
+    INSERT(&list, 30, NULL); // Insert 30 at the beginning
     PRINTLIST(&list);
 
     // Test INSERT after a specific node

@@ -4,10 +4,6 @@
 
 void hashInit(int **hashTable, int size){
     *hashTable = (int *)malloc(size * sizeof(int));  // Allocate memory for hashTable
-    if (*hashTable == NULL) {
-        printf("Memory allocation failed\n");
-        exit(1);  // Exit if malloc fails
-    }
     for (int i = 0; i < size; i++) {
         (*hashTable)[i] = -1;
     }

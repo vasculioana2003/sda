@@ -13,6 +13,7 @@ typedef struct {
 } SLL;
 
 // Funcții
+void INIT(SLL* list);
 void INSERT(SLL* list, int data, Node* position);
 Node* LOCATE(SLL* list, int data);
 int RETRIEVE(SLL* list, Node* position);

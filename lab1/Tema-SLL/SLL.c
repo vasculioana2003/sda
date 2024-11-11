@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "SLL.h"
 
+// Function to initialize the list
+void INIT(SLL* list) {
+    list->head = NULL;
+}
+
 // Funcția de inserare după un nod specificat
 void INSERT(SLL* list, int data, Node* position) {
     Node* newNode = (Node*)malloc(sizeof(Node));

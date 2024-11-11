@@ -23,7 +23,7 @@ bool isEmpty(Stack stack){
 }
 
 void push(Stack* stack, int value){
-    stack->data[stack->top + 1] = value;
+    stack->data[stack->top] = value;
     stack->top = stack->top + 1;
 }
 
@@ -39,7 +39,7 @@ void printStack(Stack stack){
         printf("stack is empty!\n");
         return;
     }
-    for (int i=0; i<stack.top; i++){
+    for (int i = 0; i < stack.top; i++) {
         printf("%d ", stack.data[i]);
     }
     printf("\n");
