@@ -4,7 +4,7 @@
 
 int main(){
     int n;
-    printf("introduceti numarul de elemente al vectorului = ");
+    printf("introduceti nr de elem al vect = ");
     scanf("%d", &n);
     int A[n];
     readArray(A, n);

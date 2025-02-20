@@ -29,7 +29,8 @@ int main() {
     scanf("%d", &x);
     t_rb_node *n = TREE_SEARCH(T.root, x);
     if (n != NULL) {
-        printf("Nodul cu cheia %d gasit la adresa %p\n", n->key, n);
+        printf("Nodul cu key %d e la adresa %p\n", 
+            n->key, n);
     } else {
         printf("Nodul nu a fost gasit\n");
     }

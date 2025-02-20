@@ -5,10 +5,10 @@
 void mergeSort(int A[], int p, int r){
     int q=0;
     if(p<r){
-        q = (p+r)/2; //mijlocul secventei
-        mergeSort(A, p, q); //sortez prima jumatate
-        mergeSort(A, q+1, r); //sortez a doua jumatate
-        merge(A, p, q, r); //combin cele doua jumatati
+        q = (p+r)/2;
+        mergeSort(A, p, q);
+        mergeSort(A, q+1, r);
+        merge(A, p, q, r);
     }
 }
 
@@ -18,12 +18,12 @@ void merge(int A[], int p, int q, int r){
     int left[n1 + 1], right[n2 + 1];
     
     for (int i = 0; i < n1; i++) {
-        left[i] = A[p + i];
+        left[i] = A[p + i]; 
     }
     for (int j = 0; j < n2; j++) {
-        right[j] = A[q + 1 + j];
+        right[j] = A[q + 1 + j]; 
     }
-    left[n1] = __INT_MAX__; // Using a large number to act as infinity
+    left[n1] = __INT_MAX__; 
     right[n2] = __INT_MAX__;
     
     int i = 0, j = 0;
@@ -39,7 +39,7 @@ void merge(int A[], int p, int q, int r){
 }
 
 void readArray(int A[], int n) {
-    printf("Enter %d elements: ", n);
+    printf("Adaugati %d elemente: ", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &A[i]);
     }

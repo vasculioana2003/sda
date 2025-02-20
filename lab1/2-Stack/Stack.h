@@ -8,15 +8,28 @@ typedef struct Stack {
 } Stack;
 
 void initStack(Stack* stack, int size);
-
 void freeStack(Stack* stack);
-
 bool isEmpty(Stack stack);
-
 void push(Stack* stack, int value);
-
 int pop(Stack* stack);
-
 void printStack(Stack stack);
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

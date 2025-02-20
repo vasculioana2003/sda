@@ -8,12 +8,12 @@ int main() {
     scanf("%d", &n);
 
     int arr[n];
-    readArray(arr, n);  // Apelează funcția pentru citirea array-ului
+    readArray(arr, n);  
     printf("Inainte de sortare: ");
-    printArray(arr, n);  // Afișează array-ul introdus
-    selectionSort(arr, n);  // Sortează array-ul
+    printArray(arr, n);  
+    selectionSort(arr, n);  
     printf("Dupa sortare: ");
-    printArray(arr, n);  // Afișează array-ul sortat
+    printArray(arr, n);  
 
     return 0;
 }

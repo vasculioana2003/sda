@@ -4,13 +4,18 @@
 
 int main() {
     Queue myQ;
-    int size = 20;
+    int size = 5;
     initQueue(&myQ, size);
     int e = -1;
     while (e != 0) {
         printf("Enter a node: ");
         scanf("%d", &e);
-        enqueue(&myQ, e);
+        if(e == 15){
+            dequeue(&myQ);
+        }
+        else {
+            enqueue(&myQ, e);
+        }
         printQueue(myQ);
     }
     while (!isEmpty(myQ)) {

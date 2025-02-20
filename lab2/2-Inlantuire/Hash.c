@@ -2,84 +2,60 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Initialize hash table
 void hashInit(Lista** hashTable, int size) {
-    *hashTable = (Lista*)malloc(size * sizeof(Lista));  // Allocate memory for hashTable
+    *hashTable = (Lista*)malloc(size * sizeof(Lista)); 
     for (int j = 0; j < size; j++) {
-        (*hashTable)[j].head = NULL;
+        (*hashTable)[j].head = NULL;//olosim . (punct) în loc de -> deoarece (*hashTable)[j] este o structură, nu un pointer la structură
     }
 }
 
 
-
-
-// Hash function
 int hashFunction(int key, int size) {
     return key % size;
 }
 
 
-
-
-
-// Insert a node in the list (chaining)
 int listInsert(Lista* hashTable, int key, int size) {
     Nod_lista* x = (Nod_lista*)malloc(sizeof(Nod_lista));
-    if (x == NULL) {
+    if (x == NULL) { 
         printf("Memory allocation failed.\n");
         return -1;
     }
-    x->cheie = key; // set the key value
+    x->cheie = key;
     int index = hashFunction(key, size);
-    
-    // Insert at the beginning of the list
-    x->next = hashTable[index].head;
+    x->next = hashTable[index].head;//daca lista e goala, x->next va fi automat NULL
     if (hashTable[index].head != NULL) {
         hashTable[index].head->prev = x;
     }
     x->prev = NULL;
     hashTable[index].head = x; 
-    
     return index;
 }
 
 
-
-
-// Insert a key into the hash table
 int chainedHashInsert(Lista* hashTable, int key, int size) {
     return listInsert(hashTable, key, size);
 }
 
 
-
-
-// Search for a key in the hash table
 int chainedHashSearch(Lista* hashTable, int key, int size) {
     int j = hashFunction(key, size);
     Nod_lista* x = hashTable[j].head;
-
     while (x != NULL) {
-        if (x->cheie == key) {
-            return j;
-        }
+        if (x->cheie == key) { return j; }
         x = x->next;
     }
-    return -1;  // Key not found
+    return -1; 
 }
 
 
-
-
-// Delete a node from the list
+//Șterge un nod dat dintr-o listă dublu înlănțuită(Primește direct un pointer x către nodul care trebuie șters)
 void listDelete(Lista* hashTable, Nod_lista* x, int size) {
-    if (x == NULL) return;  // Safety check: don't delete a NULL node
-
-    // Update the previous node's next pointer
+    if (x == NULL) return; 
     if (x->prev != NULL) {
         x->prev->next = x->next;
     } else {
-        int index = hashFunction(x->cheie, size); // Added to get the correct index
+        int index = hashFunction(x->cheie, size);
         hashTable[index].head = x->next;
     }
     if (x->next != NULL) {
@@ -88,14 +64,15 @@ void listDelete(Lista* hashTable, Nod_lista* x, int size) {
     free(x);
 }
 
+
+//Caută un nod în tabela hash și îl șterge(primeste cheia nodului)
 int chainedHashDelete(Lista* hashTable, int key, int size) {
     int j = hashFunction(key, size);
     Nod_lista* x = hashTable[j].head;
-
     while (x != NULL) {
         if (x->cheie == key) {
             listDelete(hashTable, x, size);
-            return j; 
+            return j;
         }
         x = x->next;
     }
@@ -103,13 +80,11 @@ int chainedHashDelete(Lista* hashTable, int key, int size) {
 }
 
 
-
-// Print the hash table
 void printHashtable(Lista* hashTable, int size) {
     printf("\n");
     for (int j = 0; j < size; j++) {
-        Nod_lista* x = hashTable[j].head;
         printf("Lista %d: ", j);
+        Nod_lista* x = hashTable[j].head;
         while (x != NULL) {
             printf("%d ", x->cheie);
             x = x->next;

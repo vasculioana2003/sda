@@ -1,0 +1,42 @@
+bellman_ford(G, w, s){
+    init-single-source(G, s);
+    for(i = 1 to |G.V| - 1){
+        for each edge (u, v) in G.E{
+            relax(u, v, w);
+        }
+    }
+    for each edge (u, v) in G.E{
+        if(v.d > u.d + w(u, v)){
+            return false;
+        }
+    }
+    return true;
+}
+
+init-single-source(G, s){
+    for each vertex v in G.V{
+        v.d = inf;
+        v.pi = NIL;
+    }
+    s.d = 0;
+}
+
+dijkstra(G, w, s){
+    init-single-source(G, s);
+    S = {};
+    Q = G.V;
+    while(Q != {}){
+        u = extract-min(Q);
+        S = S U {u};
+        for each vertex v in G.Adj[u]{
+            relax(u, v, w);
+        }
+    }
+}
+
+relax(u, v, w){
+    if(v.d > u.d + w(u, v)){
+        v.d = u.d + w(u, v);
+        v.pi = u;
+    }
+}

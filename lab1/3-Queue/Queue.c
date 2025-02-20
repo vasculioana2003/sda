@@ -22,21 +22,21 @@ void printQueue(Queue queue){
         printf("Queue is empty!\n");
         return;
     }
-    for (int i=queue.head; i<(queue.head + queue.length - 1); i++){
+    for (int i=queue.head; i < queue.tail; i++){
         printf("%d ", queue.data[i]);
     }
     printf("\n");
 }
 
 bool isEmpty(Queue queue){
-    return queue.head == queue.tail;
+    return queue.length == 0;
 }
 
 void enqueue(Queue* queue, int value){
     queue->data[queue->tail] = value;
     queue->length = queue->length + 1;
-    if(queue->tail == queue->length){
-        queue->tail = 1;
+    if(queue->tail == queue->length){ 
+        queue->tail = 0; 
     }
     else {
         queue->tail = queue->tail + 1;
@@ -47,7 +47,7 @@ int dequeue(Queue* queue){
     int e = queue->data[queue->head];
     queue->length = queue->length - 1;
     if (queue->head == queue->length){
-        queue->head = 1;
+        queue->head = 0;
     }
     else{
         queue->head = queue->head + 1;

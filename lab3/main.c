@@ -31,11 +31,13 @@ int main() {
     printf("\nRegasire nod cu cheia x= ");
     scanf("%d", &x);
     Node *n = IT_TREE_SEARCH(T.root, x);
-    if (n != NULL) printf("Nodul cu cheia %d gasit iterativ la adresa %p\n", n->key, &n->key);
+    if (n != NULL) printf("Nodul cu cheia %d gasit iterativ la adresa %p\n", 
+        n->key, &n->key);
     else printf("Nodul nu a fost gasit iterativ\n");
 
     n = TREE_SEARCH(T.root, x);
-    if (n != NULL) printf("Nodul cu cheia %d gasit recursiv la adresa %p\n", n->key, &n->key);
+    if (n != NULL) printf("Nodul cu cheia %d gasit recursiv la adresa %p\n", 
+        n->key, &n->key);
     else printf("Nodul nu a fost gasit recursiv\n");
 
     n = TREE_MIN(T.root);

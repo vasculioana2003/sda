@@ -3,7 +3,7 @@
 #include "Hash.h"
 
 int main() {
-    int *hashTable;
+    int *hashTable; //hashTable trebuie să fie un pointer la primul element al unui array alocat dinamic
     int size;
 
     // Input the size of the hash table
@@ -25,7 +25,7 @@ int main() {
             if (j != -1) {
                 printf("\nCheia inserată la locația %d\n", j);
             } else {
-                printf("\nInserarea nu a reușit, tabela este plină.\n");
+                printf("\nInserarea nu a reușit, tabela plină.\n");
             }
         }
     }

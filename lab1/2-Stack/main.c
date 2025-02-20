@@ -7,7 +7,7 @@ int main() {
     int e = -1;
     initStack(&stack, 20);
     while (e != 0) {
-        printf("Enter a number: ");
+        printf("Enter a number:");
         scanf("%d", &e);
         push(&stack, e);
         printStack(stack);

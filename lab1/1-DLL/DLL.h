@@ -3,13 +3,9 @@
 
 /** Structura unui nod al listei dublu înlănțuite */
 typedef struct Nod_lista {
-    /** Reprezinta cheia nodului (pointer catre valoare) */
     int cheie;
-    /** Pointeri spre nodul anterior al nodului curent */
     struct Nod_lista *next;
-    /** Pointeri spre nodul urmator al nodului curent */
     struct Nod_lista *prev;
-    // folosim "struct Nod_lista *" deoarece next si prev arata la alte noduri de tip Nod_lista
 } Nod_lista;
 
 typedef struct Lista {

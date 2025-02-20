@@ -26,14 +26,14 @@ t_rb_node* CREATE_NODE(int key) {
     newNode->left = NULL;
     newNode->right = NULL;
     newNode->parent = NULL;
-    newNode->color = RED;  // New nodes are typically red in a Red-Black Tree
+    newNode->color = RED; 
     return newNode;
 }
 
 void INORDER_WALK(t_rb_node *root) {
     if (root != NULL) {
         INORDER_WALK(root->left);
-        printf("%d %c\n", root->key, (root->color == BLACK) ? 'b' : 'r');
+        printf("%d %c\n", root->key,(root->color==BLACK)?'b':'r');
         INORDER_WALK(root->right);
     }
 }

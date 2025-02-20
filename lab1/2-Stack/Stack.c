@@ -3,16 +3,11 @@
 #include "Stack.h"
 
 void initStack(Stack* stack, int size){
-    // Allocate mem. S.data[INIT_SIZE]
-    // S.top := 0 
-    stack->data = (int*)malloc(size * sizeof(int));
-    stack->top = 0;
+    stack->data = malloc(size * sizeof(int))
+    stack->top = 0; //indica ca stiva e initial goala
 }
 
 void freeStack(Stack* stack){
-    // Free S.data
-    // S.data := NULL
-    // S.top := -1 
     free(stack->data);
     stack->data = NULL;
     stack->top = -1;
@@ -23,8 +18,8 @@ bool isEmpty(Stack stack){
 }
 
 void push(Stack* stack, int value){
-    stack->data[stack->top] = value;
-    stack->top = stack->top + 1;
+    stack->data[stack->top] = value; 
+    stack->top = stack->top + 1; 
 }
 
 int pop(Stack* stack){

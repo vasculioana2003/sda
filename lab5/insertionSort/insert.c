@@ -18,7 +18,7 @@ void printArray(int A[], int n){
 
 void insertionSort(int A[], int n){
     for(int j=1; j<n; j++){
-        int key =A[j];
+        int key =A[j]; 
         int i = j-1;
         while(i>=0 && A[i]>key){
             A[i+1] = A[i];

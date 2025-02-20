@@ -1,0 +1,15 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "greedy.h": "c",
+        "stdio.h": "c",
+        "backtracking.h": "c",
+        "stdlib.h": "c",
+        "bfs.h": "c",
+        "dfs.h": "c",
+        "dll.h": "c",
+        "kruskal-prim.h": "c",
+        "limits.h": "c",
+        "dijkstra.h": "c"
+    }
+}
